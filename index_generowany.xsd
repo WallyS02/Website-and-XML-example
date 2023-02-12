@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="guitarists">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element maxOccurs="unbounded" name="guitarist">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="name" type="xs:string" />
+							<xs:element name="surname" type="xs:string" />
+							<xs:element minOccurs="0" name="lefthanded" type="xs:string" />
+							<xs:element name="img">
+								<xs:complexType>
+									<xs:attribute name="source" type="xs:string" use="required" />
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="band">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="bandname" type="xs:string" />
+										<xs:element name="bandmembers" type="xs:string" />
+										<xs:element name="yearsactive" type="xs:string" />
+										<xs:element name="albums">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element maxOccurs="unbounded" name="album">
+														<xs:complexType>
+															<xs:sequence>
+																<xs:element maxOccurs="unbounded" name="song">
+																	<xs:complexType>
+																		<xs:sequence>
+																			<xs:element name="songname" type="xs:string" />
+																			<xs:element name="length" type="xs:unsignedByte" />
+																		</xs:sequence>
+																	</xs:complexType>
+																</xs:element>
+															</xs:sequence>
+															<xs:attribute name="kindone" type="xs:string" use="optional" />
+															<xs:attribute name="heavy" type="xs:string" use="optional" />
+															<xs:attribute name="kindtwo" type="xs:string" use="optional" />
+															<xs:attribute name="masterpiece" type="xs:string" use="optional" />
+															<xs:attribute name="kindthree" type="xs:string" use="optional" />
+															<xs:attribute name="iconic" type="xs:string" use="optional" />
+														</xs:complexType>
+													</xs:element>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="guitars">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element maxOccurs="unbounded" name="guitar">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="nameguitar" type="xs:string" />
+													<xs:element name="date" type="xs:unsignedShort" />
+													<xs:element name="brand" type="xs:string" />
+												</xs:sequence>
+												<xs:attribute name="id" type="xs:unsignedByte" use="required" />
+												<xs:attribute name="iconic" type="xs:string" use="optional" />
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="wikilink">
+								<xs:complexType>
+									<xs:simpleContent>
+										<xs:extension base="xs:string">
+											<xs:attribute name="source" type="xs:string" use="required" />
+										</xs:extension>
+									</xs:simpleContent>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+						<xs:attribute name="n" type="xs:unsignedByte" use="required" />
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

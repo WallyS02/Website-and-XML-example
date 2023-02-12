@@ -1,0 +1,206 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<guitarists xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:noNamespaceSchemaLocation="index_reczny.xsd">
+	<guitarist n="1">
+		<name>Tony</name>
+		<surname>Iommi</surname>
+		<img source="img/iommi.jpg"></img>
+		<band>
+			<bandname>Black Sabbath</bandname>
+			<bandmembers>Iommi Ward Butler Osbourne</bandmembers>
+			<yearsactive>49</yearsactive>
+			<albums>
+				<album kindone="Black Sabbath">
+					<song>
+						<songname>Black Sabbath</songname>
+						<length>6</length>
+					</song>
+					<song>
+						<songname>NIB</songname>
+						<length>6</length>
+					</song>
+					<song>
+						<songname>The Wizard</songname>
+						<length>4</length>
+					</song>
+				</album>
+				<album kindone="Paranoid">
+					<song>
+						<songname>Paranoid</songname>
+						<length>3</length>
+					</song>
+					<song>
+						<songname>War Pigs</songname>
+						<length>8</length>
+					</song>
+					<song>
+						<songname>Planet Caravan</songname>
+						<length>4</length>
+					</song>
+				</album>
+				<album kindone="Master of Reality" heavy="yes">
+					<song>
+						<songname>Sweet leaf</songname>
+						<length>5</length>
+					</song>
+					<song>
+						<songname>Solitude</songname>
+						<length>5</length>
+					</song>
+					<song>
+						<songname>Into the void</songname>
+						<length>6</length>
+					</song>
+				</album>
+			</albums>
+		</band>
+		<guitars>
+			<guitar id="1" iconic="yes">
+				<nameguitar>SG Special “Monkey”</nameguitar>
+				<date>1965</date>
+				<brand>Gibson</brand>
+			</guitar>
+			<guitar id="2">
+				<nameguitar>SG “The Old Boy”</nameguitar>
+				<date>1975</date>
+				<brand>Jaydee</brand>
+			</guitar>
+		</guitars>
+		<wikilink source="https://pl.wikipedia.org/wiki/Tony_Iommi">Tony Iommi Wiki</wikilink>
+	</guitarist>
+	
+	<guitarist n="2">
+		<name>David</name>
+		<surname>Gilmour</surname>
+		<img source="img/gilmour.jpg"></img>
+		<band>
+			<bandname>Pink Floyd</bandname>
+			<bandmembers>Gilmour Wright Waters Mason</bandmembers>
+			<yearsactive>forty nine years</yearsactive>
+			<albums>
+				<album kindtwo="The Dark Side of the Moon" masterpiece="yes">
+					<song>
+						<songname>Time</songname>
+						<length>7</length>
+					</song>
+					<song>
+						<songname>Money</songname>
+						<length>6</length>
+					</song>
+					<song>
+						<songname>Breathe</songname>
+						<length>4</length>
+					</song>
+				</album>
+				<album kindtwo="The Wall">
+					<song>
+						<songname>Young Lust</songname>
+						<length>3</length>
+					</song>
+					<song>
+						<songname>Is there anybody out there?</songname>
+						<length>3</length>
+					</song>
+					<song>
+						<songname>Another Brick in the Wall, Part 2</songname>
+						<length>4</length>
+					</song>
+				</album>
+				<album kindtwo="The Division Bell">
+					<song>
+						<songname>Marooned</songname>
+						<length>5</length>
+					</song>
+					<song>
+						<songname>Keep Talking</songname>
+						<length>6</length>
+					</song>
+					<song>
+						<songname>High Hopes</songname>
+						<length>9</length>
+					</song>
+				</album>
+			</albums>
+		</band>
+		<guitars>
+		<guitar id="1" iconic="yes">
+			<nameguitar>Stratocaster</nameguitar>
+			<date>1969</date>
+			<brand>Fender</brand>
+		</guitar>
+		<guitar id="2">
+			<nameguitar>24-fret Guitar</nameguitar>
+			<date>1970</date>
+			<brand>Bill Lewis</brand>
+		</guitar>
+		</guitars>
+		<wikilink source="https://pl.wikipedia.org/wiki/David_Gilmour">David Gilmour Wiki</wikilink>
+	</guitarist>
+	
+	<guitarist n="3">
+		<name>Jimi</name>
+		<surname>Hendrix</surname>
+		<img source="img/hendrix.jpg"></img>
+		<band>
+			<bandname>The Jimi Hendrix Experience</bandname>
+			<bandmembers>Hendrix Redding Mitchell</bandmembers>
+			<yearsactive>4</yearsactive>
+			<albums>
+				<album kindthree="Are you experienced">
+					<song>
+						<songname>Foxy Lady</songname>
+						<length>3</length>
+					</song>
+					<song>
+						<songname>Purple Haze</songname>
+						<length>3</length></song>
+					<song>
+						<songname>The Wind Cries Mary</songname>
+						<length>3</length>
+				</song>
+				</album>
+				<album kindthree="Axis: Bold as Love" iconic="yes">
+					<song>
+						<songname>Spanish Castle Magic</songname>
+						<length>3</length>
+					</song>
+					<song>
+						<songname>Little Wing</songname>
+						<length>2</length>
+					</song>
+					<song>
+						<songname>Castles Made of Sand</songname>
+						<length>3</length>
+					</song>
+				</album>
+				<album kindthree="Electric Layland">
+					<song>
+						<songname>Crosstown Traffic</songname>
+						<length>2</length>
+					</song>
+					<song>
+						<songname>All along the watchtower</songname>
+						<length>4</length>
+					</song>
+					<song>
+						<songname>Voodoo Child (Slight Return)</songname>
+						<length>5</length>
+					</song>
+				</album>
+			</albums>
+		</band>
+		<guitars>
+			<guitar id="1">
+				<nameguitar>Flying V</nameguitar>
+				<date>1958</date>
+				<brand>Gibson</brand>
+			</guitar>
+			<guitar id="2" iconic="yes">
+				<nameguitar>Classic Series Stratocaster</nameguitar>
+				<date>1960</date>
+				<brand>Fender</brand>
+			</guitar>
+		</guitars>
+		<wikilink source="https://pl.wikipedia.org/wiki/Jimi_Hendrix">Jimi Hendrix Wiki</wikilink>
+	</guitarist>
+</guitarists>

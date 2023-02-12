@@ -1,0 +1,180 @@
+﻿<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified">
+	
+	<xs:element name="guitarists">
+		<xs:complexType >
+			<xs:sequence>
+				<xs:element name="guitarist" type="guitaristType" minOccurs="0" maxOccurs="3" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:complexType name="guitaristType">
+		<xs:sequence>
+			<xs:element name="name" type="xs:string" />
+			<xs:element name="surname" type="shortStringType" />
+			<xs:element name="img">
+				<xs:complexType>
+					<xs:simpleContent>
+						<xs:extension base="longStringType">
+							<xs:attribute name="source" type="xs:anyURI" use="required"/>
+						</xs:extension>
+					</xs:simpleContent>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="band" type="bandType"/>
+			<xs:element name="guitars" type="guitarsType"/>
+			<xs:element name="wikilink">
+				<xs:complexType>
+					<xs:simpleContent>
+						<xs:extension base="longStringType">
+							<xs:attribute name="source" type="xs:anyURI" use="required"/>
+						</xs:extension>
+					</xs:simpleContent>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="n" type="xs:byte"/>
+	</xs:complexType>
+
+	<xs:complexType name="bandType">
+		<xs:sequence>
+			<xs:element name="bandname" type="shortStringType" />
+			<xs:element name="bandmembers" type="lType"/>
+			<xs:element name="yearsactive" type="unionType"/>
+			<xs:element name="albums" type="albumsType" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:simpleType name="listType">
+		<xs:list itemType="xs:string"/>
+	</xs:simpleType>
+
+	<xs:simpleType name="lType">
+		<xs:restriction base="listType">
+			<xs:maxLength value="4"/>
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:simpleType name="unionType">
+		<xs:union memberTypes="activeYearsType activeStringYearsType"/>
+	</xs:simpleType>
+
+	<xs:simpleType name="activeYearsType">
+		<xs:restriction base="xs:positiveInteger">
+			<xs:maxInclusive value="50"/>
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:simpleType name="activeStringYearsType">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="18"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="shortStringType">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1"/>
+			<xs:maxLength value="30"/>
+			<xs:whiteSpace value="preserve"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="longStringType">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="50"/>
+			<xs:whiteSpace value="preserve"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:complexType name="albumsType">
+		<xs:sequence>
+			<xs:element name="album" type="albumType" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="albumType">
+		<xs:sequence>
+			<xs:element name="song" type="songType" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attributeGroup ref="kindGroup"/>
+		<xs:attribute name="heavy">
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:length value="3"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="masterpiece">
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:length value="3"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute ref="iconic"/>
+	</xs:complexType>
+
+	<xs:complexType name="songType">
+		<xs:sequence>
+			<xs:element name="songname" type="longStringType"/>
+			<xs:element name="length" type="xs:decimal"/>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="guitarsType">
+		<xs:sequence>
+			<xs:element name="guitar" type="guitarType" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="guitarType" mixed="true">
+		<xs:sequence>
+			<xs:element name="nameguitar" type="longStringType"/>
+			<xs:element name="date" type="xs:positiveInteger" minOccurs="0"/>
+			<xs:element ref="brand"/>
+		</xs:sequence>
+		<xs:attribute name="id"/>
+		<xs:attribute ref="iconic"/>
+	</xs:complexType>
+
+	<xs:element name="brand" type="shortStringType"/>
+
+	<xs:attributeGroup name="kindGroup">
+		<xs:attribute name="kindone" type="kindoneType"/>
+		<xs:attribute name="kindtwo" type="kindtwoType"/>
+		<xs:attribute name="kindthree" type="kindthreeType"/>
+	</xs:attributeGroup>
+	
+	<xs:simpleType name="kindoneType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Black Sabbath"/>
+			<xs:enumeration value="Paranoid"/>
+			<xs:enumeration value="Master of Reality"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="kindtwoType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="The Dark Side of the Moon"/>
+			<xs:enumeration value="The Wall"/>
+			<xs:enumeration value="The Division Bell"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="kindthreeType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Are you experienced"/>
+			<xs:enumeration value="Axis: Bold as Love"/>
+			<xs:enumeration value="Electric Layland"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:attribute name="iconic" type="patternType"/>
+	<xs:simpleType name="patternType">
+		<xs:restriction base="xs:string">
+			<xs:pattern value="yes|no"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+</xs:schema>

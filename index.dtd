@@ -1,0 +1,38 @@
+<!ELEMENT guitarists (guitarist+)>
+<!ELEMENT guitarist (name, surname, lefthanded*, img, band, guitars, wikilink)>
+<!ELEMENT name (#PCDATA)>
+<!ELEMENT surname (#PCDATA)>
+<!ELEMENT img (#PCDATA)>
+<!ELEMENT band (bandname, bandmembers, yearsactive, albums)>
+<!ELEMENT guitars (guitar+)>
+<!ELEMENT wikilink (#PCDATA)>
+<!ELEMENT guitar (nameguitar, date, brand)>
+<!ELEMENT nameguitar (#PCDATA)>
+<!ELEMENT date (#PCDATA)>
+<!ELEMENT brand (#PCDATA)>
+<!ELEMENT bandname (#PCDATA)>
+<!ELEMENT bandmembers (#PCDATA)>
+<!ELEMENT yearsactive (#PCDATA)>
+<!ELEMENT albums (album+)>
+<!ELEMENT album (song+)>
+<!ELEMENT song ((songname, length)|key)>
+<!ELEMENT songname (#PCDATA)>
+<!ELEMENT length (#PCDATA)>
+<!ELEMENT key (#PCDATA)>
+<!ELEMENT lefthanded (#PCDATA)>
+
+<!ATTLIST guitarist n (1|2|3) #REQUIRED>
+<!ATTLIST album kindone CDATA #IMPLIED>
+<!ATTLIST album kindtwo CDATA #IMPLIED>
+<!ATTLIST album kindthree CDATA #IMPLIED>
+<!ATTLIST album heavy CDATA #IMPLIED>
+<!ATTLIST album masterpiece CDATA #IMPLIED>
+<!ATTLIST album iconic CDATA "%encjaparam1;">
+<!ATTLIST guitar iconic CDATA #IMPLIED>
+<!ATTLIST guitar id CDATA "%encjaparam2;">
+<!ATTLIST img source CDATA #REQUIRED>
+<!ATTLIST wikilink source CDATA #REQUIRED>
+
+<!ENTITY encja "yes">
+<!ENTITY % encjaparam1 "yes">
+<!ENTITY % encjaparam2 "(1|2)">
